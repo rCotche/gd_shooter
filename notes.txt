@@ -1,0 +1,17 @@
+editor settings > interface theme > preset
+
+===========
+
+node2d > region > edit region > crop image ?
+
+===========
+
+icon like a chain to add scene i created (au lieu de drag nd drop)
+
+===========
+
+lors de la creation d'un perso ou objet il vaut mieux laisser le sprite2d au centre de l'image ?
+
+===========
+
+l'ordre des nodes dans la hiérarchie ont une importance, node bed avant player : le player apparait au dessus du bed et vice versa

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://e8v6mu7b245w"]
+
+[ext_resource type="Texture2D" uid="uid://f4mxrlq71wni" path="res://graphics/objects/bed.png" id="1_2km77"]
+[ext_resource type="Texture2D" uid="uid://bihva3o7pgvw" path="res://graphics/objects/pillow_large.png" id="2_7w002"]
+
+[node name="Bed" type="Node2D"]
+
+[node name="BedImage" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2km77")
+
+[node name="PillowImage" type="Sprite2D" parent="."]
+position = Vector2(117, -42)
+rotation = -3.14159
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_7w002")
+
+[node name="PillowImage2" type="Sprite2D" parent="."]
+position = Vector2(118, 30)
+rotation = -3.14159
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_7w002")

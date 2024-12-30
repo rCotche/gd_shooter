@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+
+# jeux
+Shooter.exe
+# mon scipt
+gitPush.bat
