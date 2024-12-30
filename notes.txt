@@ -15,3 +15,11 @@ lors de la creation d'un perso ou objet il vaut mieux laisser le sprite2d au cen
 ===========
 
 l'ordre des nodes dans la hiérarchie ont une importance, node bed avant player : le player apparait au dessus du bed et vice versa
+
+===========
+
+logo maximize en haut à droite editeur de code
+
+===========
+
+bien lire descriptif de la propriete lorsque je hover au dessus d'une propriete dans l'inspector. Exemple : propriete "rotation" est en radian, "rotation_degrees" valeur en degré
