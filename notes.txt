@@ -18,8 +18,16 @@ l'ordre des nodes dans la hiérarchie ont une importance, node bed avant player 
 
 ===========
 
-logo maximize en haut à droite editeur de code
+logo maximize en haut à droite éditeur de code
 
 ===========
 
-bien lire descriptif de la propriete lorsque je hover au dessus d'une propriete dans l'inspector. Exemple : propriete "rotation" est en radian, "rotation_degrees" valeur en degré
+bien lire descriptif de la propriété lorsque je hover au dessus d'une propriété dans l'inspector. Exemple : propriété "rotation" est en radian, "rotation_degrees" valeur en degré
+
+===========
+
+input map
+
+project > project settings > input map (controle)
+
+ctrl + click on keyword (rappel)
