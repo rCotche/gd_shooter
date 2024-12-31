@@ -1,7 +1,7 @@
 extends Sprite2D
 
 var pos: Vector2 = Vector2.ZERO #Vector2(0, 0)
-const speed: int = 10
+const speed: int = 200
 
 var test_scale: int = 1
 
@@ -21,7 +21,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#position.x += 10
-	pos.x += speed
+	pos.x += speed * delta
 	position = pos
 	
 	#scale += Vector2(0.1, 0.1)
