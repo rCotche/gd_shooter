@@ -12,8 +12,8 @@ func _ready() -> void:
 	pos = Vector2(300, 200)
 	position = pos
 	
-	var test_rotation = 45
-	rotation_degrees = test_rotation
+	#var test_rotation = 45
+	#rotation_degrees = test_rotation
 	
 	test_scale = 2
 	scale = Vector2(test_scale, test_scale)
@@ -26,5 +26,5 @@ func _process(delta: float) -> void:
 	
 	#scale += Vector2(0.1, 0.1)
 	#0.1 fonctione pas car test_scale c'est un int
-	test_scale += 1
-	scale = Vector2(test_scale, test_scale)
+	#test_scale += 1
+	#scale = Vector2(test_scale, test_scale)
