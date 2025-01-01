@@ -1,16 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7ngql5udj5vx"]
+[gd_scene load_steps=6 format=3 uid="uid://c7ngql5udj5vx"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_h8nly"]
-[ext_resource type="Texture2D" uid="uid://bsskkubbq0gos" path="res://icon.svg" id="1_mbeeo"]
-[ext_resource type="Script" path="res://scenes/logo.gd" id="2_kamsb"]
+[ext_resource type="PackedScene" uid="uid://di0polosr3iqa" path="res://scenes/enemies/drone.tscn" id="4_sf063"]
+[ext_resource type="PackedScene" uid="uid://bo0critrkinxh" path="res://scenes/objects/box.tscn" id="4_xpkq5"]
 [ext_resource type="PackedScene" uid="uid://dj3ffilq84nrh" path="res://scenes/player/player.tscn" id="4_yfv0b"]
+[ext_resource type="PackedScene" uid="uid://e8v6mu7b245w" path="res://scenes/objects/bed.tscn" id="5_05yjp"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_h8nly")
 
-[node name="Logo" type="Sprite2D" parent="."]
-texture = ExtResource("1_mbeeo")
-script = ExtResource("2_kamsb")
+[node name="Bed" parent="." instance=ExtResource("5_05yjp")]
+position = Vector2(540, 5)
 
 [node name="Player" parent="." instance=ExtResource("4_yfv0b")]
 position = Vector2(593, 231)
+
+[node name="Box" parent="." instance=ExtResource("4_xpkq5")]
+position = Vector2(209, 496)
+
+[node name="Drone" parent="." instance=ExtResource("4_sf063")]

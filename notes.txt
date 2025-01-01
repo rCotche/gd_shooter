@@ -31,3 +31,15 @@ input map
 project > project settings > input map (controle)
 
 ctrl + click on keyword (rappel)
+
+===========
+
+all physics node need a collision shape or collision polygon
+
+#recommandation
+collision toujours au centre (transform o,o)
+deplace l'image si il faut (sprite)
+
+===========
+
+dès que ça bouge par le code = characterbody2d
