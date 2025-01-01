@@ -9,7 +9,8 @@ func _ready() -> void:
 	
 	#for i in test_array:
 		#print(i)
-	print(test_array[0])
+	#print(test_array[0])
+	#print(%Target)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,3 +25,6 @@ func _process(delta: float) -> void:
 		$Logo.pos.x = 0
 	#else:
 		#print("pas encore " + str($Logo.position.x))
+		
+func test_function():
+	print("c un test function")

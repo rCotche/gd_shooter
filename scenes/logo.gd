@@ -17,6 +17,14 @@ func _ready() -> void:
 	
 	test_scale = 2
 	scale = Vector2(test_scale, test_scale)
+	
+	#unique name is accessible partout dans la scene
+	#print(%Target.position)
+	
+	#$".." = parant node
+	print($"..".test_array)
+	#just pour test, best pratice : call down signal up
+	$"..".test_function()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
