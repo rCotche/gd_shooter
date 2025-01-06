@@ -42,4 +42,13 @@ deplace l'image si il faut (sprite)
 
 ===========
 
-dès que ça bouge par le code = characterbody2d
+dès que ça bouge par les inputs = characterbody2d
+
+dès que ça demande des calculs pour la physique mais on ne bouge pas avec les inputs = rigidbody2d
+
+dès que l'on bouge juste avec les position = area2d
+
+===========
+rappel
+
+lorsque le jeu est en cours pour debugger il y a une nouvelle tab "remote" au niveau de la hierachy (niveau du tree)
