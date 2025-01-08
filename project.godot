@@ -59,6 +59,14 @@ up={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Players"
+2d_render/layer_2="Enemies"
+2d_render/layer_3="Objects"
+2d_render/layer_4="Projectiles"
+2d_render/layer_5="Items & Zones"
+
 [rendering]
 
 renderer/rendering_method="mobile"

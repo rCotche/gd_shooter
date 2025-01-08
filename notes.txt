@@ -91,3 +91,8 @@ self modulate change color of him ignore its child
 ===========
 
 Tilemeap > (dans l'inspector) tileset
+
+===========
+projet
+
+projet settings > layer name > 2d render
