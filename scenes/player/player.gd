@@ -3,8 +3,8 @@ extends CharacterBody2D
 var can_laser: bool = true
 var can_grenade: bool = true
 
-signal laser(pos)
-signal grenade(pos)
+signal laser(pos, direction)
+signal grenade(pos, direction)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,7 +24,19 @@ func _process(_delta: float) -> void:
 	#specific method to move a CharacterBody2D
 	move_and_slide()
 	
-	#laser shooting input
+	#rotate
+	#look_at : rotate vers un vector2
+	look_at(get_global_mouse_position())
+	
+	#to get la direction entre le player et le mouse
+	#on va soustraire les 2 vecteurs
+	#mouse vecteur - player vecteur
+	#cible - origine
+	#permet d'obtenir la direction
+	#.normalized() sans être influencer par la longeur du vecteur
+	var player_direction = (get_global_mouse_position() - position).normalized()
+	
+	#LASER shooting input
 	if Input.is_action_pressed("primary action") and can_laser:
 		# randomly selected a marker 2d for the laser start
 		var laser_markers = $LaserStartPositions.get_children()
@@ -38,8 +50,8 @@ func _process(_delta: float) -> void:
 		can_laser = false
 		$TimerLaser.start()
 		#emit the position we selected
-		laser.emit(laser_selected.global_position)
-	#grenade shooting input
+		laser.emit(laser_selected.global_position, player_direction)
+	#GRENADE shooting input
 	if Input.is_action_pressed("secondary action") and can_grenade:
 		#var grenade_marker = $GrenadeStartPosition.global_position #moi
 		var pos = $LaserStartPositions.get_children()[0].global_position
@@ -47,7 +59,7 @@ func _process(_delta: float) -> void:
 		$TimerGrenade.start()
 		#emit the position we selected
 		#grenade.emit(grenade_marker)#moi
-		grenade.emit(pos)
+		grenade.emit(pos, player_direction)
 
 
 func _on_timer_laser_timeout() -> void:

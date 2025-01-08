@@ -52,3 +52,28 @@ dès que l'on bouge juste avec les position = area2d
 rappel
 
 lorsque le jeu est en cours pour debugger il y a une nouvelle tab "remote" au niveau de la hierachy (niveau du tree)
+
+===========
+gravity scale 1 fait tomber le rigidbody2d
+
+physics material override > click on empty > select new physics material
+
+set bounce to 100
+
+===========
+solve the issues with look_at
+rotate the image to 90°
+
+par default le vector 0 est sur la ligne des abscisse (x)
+
+===========
+
+zoom camera
+
+inferieur à 1 dézoom
+sup à 1 zoom
+
+===========
+peoject
+
+project settings > display > window >
