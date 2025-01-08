@@ -4,6 +4,10 @@ editor settings > interface theme > preset
 
 node2d > region > edit region > crop image ?
 
+region > edit region > un plus grand rectangle que l'image
+
+texture > repeat > enabled (une solution pour avoir un sol à l'infini)
+
 ===========
 
 icon like a chain to add scene i created (au lieu de drag nd drop)
@@ -77,3 +81,13 @@ sup à 1 zoom
 peoject
 
 project settings > display > window >
+
+===========
+
+sprite2d > canvasitem > visibility > modulate
+change color image and its child
+self modulate change color of him ignore its child
+
+===========
+
+Tilemeap > (dans l'inspector) tileset
