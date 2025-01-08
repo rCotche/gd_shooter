@@ -49,6 +49,8 @@ func _process(_delta: float) -> void:
 		print(laser_selected)
 		can_laser = false
 		$TimerLaser.start()
+		#
+		$GPUParticles2D.emitting = true
 		#emit the position we selected
 		laser.emit(laser_selected.global_position, player_direction)
 	#GRENADE shooting input

@@ -96,3 +96,22 @@ Tilemeap > (dans l'inspector) tileset
 projet
 
 projet settings > layer name > 2d render
+
+===========
+
+cpuparticle for weaker system
+gpuparticle for the other
+
+gpuparticle > process material > new process material
+
+Emission shape is under the spawn (spawn > position > emisssion shape)
+Gravity is under the accelerations menu (acceleration > gravity)
+Scale is under display (display > scale)
+
+display > color curves > color
+
+display > color curves > color ramp > new gradient
+color ramp : start with black then overtime it become white
+
+spawn > velocity > direction
+spawn > velocity > initial velocity
