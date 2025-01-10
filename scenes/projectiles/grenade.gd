@@ -10,3 +10,6 @@ const speed = 750
 #func _process(delta: float) -> void:
 	#position += direction * speed * delta
 	
+
+func explode():
+	$AnimationPlayer.play("Explosion")

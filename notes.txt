@@ -138,3 +138,24 @@ directionnallight
 
 blend mode: add by default
 switch to substract to make the level darker
+===========
+animated sprite 2d > animation > sprite frames
+
+dont forget the autoplay
+===========
+sprite2d > animation
+
+separe en colonne et ligne
+
+hframe : separe le spreadesheet à l'horizontal (qd ça coupe ça forme une colonne)
+vframe : separe le spreadesheet à la vertical (qd ça coupe ça forme une ligne)
+frame : la frame (l'indice de la frame)
+===========
+animation player
+
+en bas > click animation > new
+
+add track > property > sprite > frame > 
+===========
+
+modulate property to slowly decrease the alpha(l'explosion disparait ti tap ti)
