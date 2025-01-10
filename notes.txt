@@ -92,6 +92,8 @@ self modulate change color of him ignore its child
 
 Tilemeap > (dans l'inspector) tileset
 
+Tilemeap > (dans l'inspector) tileset > rendering > occlusion layers
+
 ===========
 projet
 
@@ -115,3 +117,24 @@ color ramp : start with black then overtime it become white
 
 spawn > velocity > direction
 spawn > velocity > initial velocity
+
+===========
+
+pointlight > texture
+
+energy : to make it more visible
+texture scale : to increase how far the light reaching
+
+pointlight > shadow enabled (after LightOccluder)
+
+filter : c'est le bord de la lumiere et le shadow (peut impacter grandement les performances du jeu)
+filter smooth
+
+===========
+LightOccluder > occluder > new occluder polygon
+
+===========
+directionnallight
+
+blend mode: add by default
+switch to substract to make the level darker

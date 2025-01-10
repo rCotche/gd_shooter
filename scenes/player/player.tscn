@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dj3ffilq84nrh"]
+[gd_scene load_steps=9 format=3 uid="uid://dj3ffilq84nrh"]
 
 [ext_resource type="Texture2D" uid="uid://b7qe7ubswsjly" path="res://graphics/player/player.png" id="1_e2wmj"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_nbtra"]
@@ -25,17 +25,20 @@ scale_min = 0.1
 scale_max = 0.5
 color_ramp = SubResource("GradientTexture1D_gyxj8")
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_752o1"]
+polygon = PackedVector2Array(-15, 59, 9, 56, 33, 43, 48, 39, 63, 40, 64, 49, 99, 51, 102, 43, 113, 34, 126, 35, 133, 31, 139, 20, 136, 9, 127, 2, 117, 1, 103, -6, 89, -13, 80, -10, 66, -27, 54, -30, 49, -42, 40, -52, 29, -61, 13, -59, -6, -58, -23, -53, -27, -47, -43, -44, -49, -36, -55, -21, -54, -11, -56, 2, -50, 12, -46, 16, -47, 24, -37, 33, -33, 43, -28, 53)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
 script = ExtResource("1_nbtra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cwlo7")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
 position = Vector2(41, -1)
 rotation = 1.5708
 texture = ExtResource("1_e2wmj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_cwlo7")
 
 [node name="TimerLaser" type="Timer" parent="."]
 wait_time = 0.5
@@ -67,6 +70,9 @@ process_material = SubResource("ParticleProcessMaterial_hdtqn")
 texture = ExtResource("3_uai2c")
 lifetime = 0.2
 one_shot = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_752o1")
 
 [connection signal="timeout" from="TimerLaser" to="." method="_on_timer_laser_timeout"]
 [connection signal="timeout" from="TimerGrenade" to="." method="_on_timer_grenade_timeout"]
