@@ -44,7 +44,6 @@ func _process(_delta: float) -> void:
 		#randi() % 100     # Returns random integer between 0 and 99
 		#randi() % 100 + 1 # Returns random integer between 1 and 100
 		var laser_selected = laser_markers[randi() % laser_markers.size()]
-		print(laser_selected)
 		can_laser = false
 		$TimerLaser.start()
 		#
