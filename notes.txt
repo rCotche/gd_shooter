@@ -159,3 +159,9 @@ add track > property > sprite > frame >
 ===========
 
 modulate property to slowly decrease the alpha(l'explosion disparait ti tap ti)
+
+===========
+scene > scene inherited > select parent scene
+
+===========
+projetc > project setting > application > run >
