@@ -1,5 +1,74 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh706jomndp63"]
+[gd_scene load_steps=9 format=3 uid="uid://bh706jomndp63"]
 
 [ext_resource type="PackedScene" uid="uid://c7ngql5udj5vx" path="res://scenes/levels/level.tscn" id="1_o4fol"]
+[ext_resource type="TileSet" uid="uid://b5eto55iwb6j8" path="res://scenes/levels/house.tres" id="2_7yywq"]
+[ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_hkut0"]
+[ext_resource type="Texture2D" uid="uid://b1nnght3vyho3" path="res://graphics/ground/dirt.png" id="2_kofo6"]
+[ext_resource type="PackedScene" uid="uid://djpwneme4ww68" path="res://scenes/objects/simple_light.tscn" id="3_ye0hx"]
+[ext_resource type="PackedScene" uid="uid://bsmcit55fpy1d" path="res://scenes/objects/wall_light.tscn" id="4_5lgw3"]
+[ext_resource type="Texture2D" uid="uid://cabrl7daeuavu" path="res://graphics/lights/textures/circle.png" id="4_lb4gq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i6c8"]
+size = Vector2(348, 218)
 
 [node name="Inside" instance=ExtResource("1_o4fol")]
+script = ExtResource("2_hkut0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" index="0"]
+texture_repeat = 2
+texture = ExtResource("2_kofo6")
+region_enabled = true
+region_rect = Rect2(-3523.15, -4694.61, 7761.12, 8101.31)
+
+[node name="TileMap" type="TileMap" parent="Ground" index="1"]
+tile_set = ExtResource("2_7yywq")
+format = 2
+layer_0/name = "Floor"
+layer_0/tile_data = PackedInt32Array(65538, 131073, 2, 131067, 1, 2, -458757, 1, 0, -524286, 131073, 0, -393221, 1, 1, -327685, 1, 1, -262149, 1, 1, -196613, 1, 1, -131077, 1, 1, -65541, 1, 1, -5, 1, 1, 65531, 1, 1, 2, 131073, 1, -65534, 131073, 1, -131070, 131073, 1, -196606, 131073, 1, -262142, 131073, 1, -327678, 131073, 1, -393214, 131073, 1, -458750, 131073, 1, -458756, 65537, 0, -458755, 65537, 0, -458754, 65537, 0, -458753, 65537, 0, -524288, 65537, 0, -524287, 65537, 0, 131068, 65537, 2, 131069, 65537, 2, 131070, 65537, 2, 65536, 65537, 2, 65537, 65537, 2, 65535, 65537, 1, 131071, 65537, 1, -65538, 65537, 1, -131074, 65537, 1, -196610, 65537, 1, -262146, 65537, 1, -327682, 65537, 1, -393218, 65537, 1, -393219, 65537, 1, -393220, 65537, 1, -327684, 65537, 1, -262148, 65537, 1, -196612, 65537, 1, -131076, 65537, 1, -65540, 65537, 1, -4, 65537, 1, 65532, 65537, 1, 65533, 65537, 1, -3, 65537, 1, -65539, 65537, 1, -131075, 65537, 1, -196611, 65537, 1, -262147, 65537, 1, -327683, 65537, 1, -2, 65537, 1, 65534, 65537, 1, -1, 65537, 1, -65537, 65537, 1, -131073, 65537, 1, -196609, 65537, 1, -262145, 65537, 1, -327681, 65537, 1, -393217, 65537, 1, -458752, 65537, 1, -393216, 65537, 1, -327680, 65537, 1, -262144, 65537, 1, -196608, 65537, 1, -131072, 65537, 1, -65536, 65537, 1, 0, 65537, 1, 1, 65537, 1, -65535, 65537, 1, -131071, 65537, 1, -196607, 65537, 1, -262143, 65537, 1, -327679, 65537, 1, -393215, 65537, 1, -458751, 65537, 1)
+layer_1/name = "OutsideWall"
+layer_1/tile_data = PackedInt32Array(65538, 327681, 2, 2, 327681, 1, -65534, 327681, 1, -131070, 327681, 1, -196606, 327681, 1, -262142, 327681, 1, -327678, 327681, 1, -393214, 327681, 1, -327685, 327681, 1, -262149, 327681, 1, -196613, 327681, 1, -131077, 327681, 1, -65541, 327681, 1, -5, 327681, 1, 65531, 327681, 1, 131067, 196609, 2, 131068, 262145, 2, 131069, 262145, 2, 131070, 262145, 2, 65536, 262145, 2, 65537, 262145, 2, -393221, 196609, 1, -458750, 196609, 1, -458757, 196609, 0, -524286, 327681, 0, -458756, 262145, 0, -458755, 262145, 0, -458754, 262145, 0, -458753, 262145, 0, -524288, 262145, 0, -524287, 262145, 0, 131071, 393217, 4)
+layer_2/name = "InsideWall"
+layer_2/tile_data = PackedInt32Array(-65536, 131073, 7, 0, 327681, 6, -65535, 1, 6, -65534, 196609, 7, 65534, 65537, 6, -2, 327681, 6, -65538, 65537, 7, 131070, 196609, 8, -65541, 131073, 8, -65540, 1, 6, -65539, 1, 6, -327685, 131073, 8, -327684, 1, 6, -327683, 1, 6, -327682, 1, 6, -327681, 1, 6, -393216, 393217, 7, -393214, 196609, 7, 65536, 1, 8)
+
+[node name="Player" parent="." index="2"]
+position = Vector2(-282, 207)
+
+[node name="PointLight2D" type="PointLight2D" parent="Player" index="9"]
+energy = 1.5
+texture = ExtResource("4_lb4gq")
+
+[node name="SimpleLight" parent="Lights" index="0" instance=ExtResource("3_ye0hx")]
+position = Vector2(585, -170)
+
+[node name="SimpleLight2" parent="Lights" index="1" instance=ExtResource("3_ye0hx")]
+position = Vector2(-1672, -9)
+rotation = -1.5708
+
+[node name="SimpleLight3" parent="Lights" index="2" instance=ExtResource("3_ye0hx")]
+position = Vector2(-557, 157)
+rotation = -1.5708
+
+[node name="WallLight" parent="Lights" index="3" instance=ExtResource("4_5lgw3")]
+position = Vector2(847, -1388)
+rotation = -1.5708
+
+[node name="WallLight2" parent="Lights" index="4" instance=ExtResource("4_5lgw3")]
+position = Vector2(-1634, -1579)
+rotation = 1.5708
+
+[node name="WallLight3" parent="Lights" index="5" instance=ExtResource("4_5lgw3")]
+position = Vector2(-341, -2808)
+rotation = -3.14159
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
+visible = false
+color = Color(0.716788, 0.542976, 0.541458, 1)
+blend_mode = 1
+
+[node name="ExitGateArea" type="Area2D" parent="." index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
+position = Vector2(-207, 548)
+shape = SubResource("RectangleShape2D_4i6c8")
+
+[connection signal="body_entered" from="ExitGateArea" to="." method="_on_area_2d_body_entered"]

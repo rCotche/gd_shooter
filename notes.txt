@@ -165,3 +165,9 @@ scene > scene inherited > select parent scene
 
 ===========
 projetc > project setting > application > run >
+
+===========
+tilemap > tileset > 3 dot > save tileset
+
+===========
+sprite2d > modulate > alpha 50 > (overlays, un effet de lumiere)
