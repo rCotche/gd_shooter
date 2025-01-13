@@ -30,3 +30,23 @@ func _on_player_grenade(pos, direction) -> void:
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
+
+
+func _on_house_player_entered() -> void:
+	#create a tween object
+	var tween = get_tree().create_tween()
+	#run les animation tween simultanement
+	tween.set_parallel(true)
+	#do the animation
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(1,1), 1)
+	#modulate : gere la couleur des nodes
+	#la property modulate a 4 valeurs : RGBA
+	#modulate:a : cible que la valeur aplha de la property
+	tween.tween_property($Player, "modulate:a", 0, 2)
+
+
+func _on_house_player_exited() -> void:
+	#create a tween object
+	var tween = get_tree().create_tween()
+	#do the animation
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.6,0.6), 1)
