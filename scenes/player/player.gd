@@ -6,10 +6,8 @@ var can_grenade: bool = true
 signal laser(pos, direction)
 signal grenade(pos, direction)
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
+@export var max_speed: int = 500
+var speed: int = max_speed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #pour dire que on utilise delta à godot on ajoute un underscore pour le prevenir
@@ -20,7 +18,7 @@ func _process(_delta: float) -> void:
 	
 	#velocity propriete de CharacterBody2D
 	#velocity include delta automatically
-	velocity = direction * 500
+	velocity = direction * speed
 	#specific method to move a CharacterBody2D
 	move_and_slide()
 	
