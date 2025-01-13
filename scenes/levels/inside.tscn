@@ -32,6 +32,7 @@ layer_2/tile_data = PackedInt32Array(-65536, 131073, 7, 0, 327681, 6, -65535, 1,
 
 [node name="Player" parent="." index="2"]
 position = Vector2(-282, 207)
+rotation = -1.71453
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="9"]
 energy = 1.5

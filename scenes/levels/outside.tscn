@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cjnk1lk1bhr8h"]
+[gd_scene load_steps=19 format=3 uid="uid://cjnk1lk1bhr8h"]
 
 [ext_resource type="PackedScene" uid="uid://c7ngql5udj5vx" path="res://scenes/levels/level.tscn" id="1_grywl"]
 [ext_resource type="PackedScene" uid="uid://bxohvpqc2rtwi" path="res://scenes/objects/gate.tscn" id="2_1yrqu"]
@@ -15,8 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://drmx76rpt6qag" path="res://scenes/houses/house.tscn" id="11_67gpo"]
 [ext_resource type="PackedScene" uid="uid://bohibd8vwthm3" path="res://scenes/objects/steam_vent.tscn" id="12_wcy0w"]
 [ext_resource type="PackedScene" uid="uid://bufqectv8nrps" path="res://scenes/objects/light_fan_animation.tscn" id="13_g1slx"]
-[ext_resource type="PackedScene" uid="uid://b0ebuapq3tdvv" path="res://scenes/container/toilet.tscn" id="16_cxnoj"]
-[ext_resource type="PackedScene" uid="uid://3cv6d5vqmlgj" path="res://scenes/container/box.tscn" id="17_dunfj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofcjs"]
 resource_name = "walls"
@@ -110,10 +108,8 @@ autoplay = "default"
 [node name="Gate" parent="." index="1" instance=ExtResource("2_1yrqu")]
 position = Vector2(700, -794)
 
-[node name="Toilet" parent="." index="4" instance=ExtResource("16_cxnoj")]
-position = Vector2(1128, 686)
-
-[node name="Box" parent="." index="5" instance=ExtResource("17_dunfj")]
-position = Vector2(1164, 290)
+[node name="Player" parent="." index="3"]
+position = Vector2(744, 154)
+rotation = 1.39225
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
