@@ -171,3 +171,19 @@ tilemap > tileset > 3 dot > save tileset
 
 ===========
 sprite2d > modulate > alpha 50 > (overlays, un effet de lumiere)
+
+===========
+texturerect node display an image
+videostreamplayer node display video
+texturebutton node if you want images in your button
+
+canvaslayer node est necessaire pour l'ui
+
+
+control node > inspector > control > layout > Anchor preset > custom
+
+Anchor point (left - top - right - Bottom [sens horaire, 0 à 1] )
+left commence right termine
+left starting point, right ending point
+top commence bottom termine
+top starting point, bottom ending point

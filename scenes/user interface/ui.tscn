@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ine4j1pw24b1"]
+
+[ext_resource type="Texture2D" uid="uid://dvu80ck83o2up" path="res://graphics/enemies/scout.png" id="1_ysq5r"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "un text"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 372.0
+offset_top = 270.0
+offset_right = 412.0
+offset_bottom = 310.0
+texture = ExtResource("1_ysq5r")
