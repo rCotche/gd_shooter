@@ -201,3 +201,19 @@ HboxContainer > theme override > constants > enbled separation > increase nbre (
 grid container node > columns
 
 label > control > theme > new theme > click theme > font
+
+===========
+
+texture progess bar node
+
+Under = background
+Progress = the health
+over = ouverlay
+
+margin container node > theme override > constants > add margin (like css)
+
+===========
+(session en web ou un provider en flutter)
+project > project settings > autoload
+
+considere comme un node, du coup on peut avoir accès aux property

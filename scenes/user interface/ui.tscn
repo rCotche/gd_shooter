@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://ine4j1pw24b1"]
+[gd_scene load_steps=7 format=3 uid="uid://ine4j1pw24b1"]
 
+[ext_resource type="Script" path="res://scenes/user interface/ui.gd" id="1_gbhl4"]
 [ext_resource type="Theme" uid="uid://cbj2a5w8xyk3u" path="res://scenes/user interface/ui.tres" id="1_qtnup"]
 [ext_resource type="Texture2D" uid="uid://b0keieb8jptha" path="res://graphics/ui/bullet.png" id="1_y7njn"]
 [ext_resource type="Texture2D" uid="uid://bu7wtx83s6eq2" path="res://graphics/ui/grenade.png" id="2_y75h2"]
+[ext_resource type="Texture2D" uid="uid://dpjrabbg0wgg3" path="res://graphics/ui/progress_bar/bg.png" id="4_clatk"]
+[ext_resource type="Texture2D" uid="uid://k0bwvtk722vk" path="res://graphics/ui/progress_bar/progress.png" id="5_i0g28"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_gbhl4")
 
 [node name="LaserCounter" type="Control" parent="."]
 layout_mode = 3
@@ -24,7 +28,6 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="LaserCounter/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_qtnup")
-text = "20"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="LaserCounter/VBoxContainer"]
@@ -53,7 +56,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="GrenadeCounter/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_qtnup")
-text = "5
+text = "
 "
 horizontal_alignment = 1
 
@@ -61,3 +64,23 @@ horizontal_alignment = 1
 layout_mode = 2
 texture = ExtResource("2_y75h2")
 expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -40.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 30
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+value = 50.0
+texture_under = ExtResource("4_clatk")
+texture_progress = ExtResource("5_i0g28")
