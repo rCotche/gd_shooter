@@ -52,3 +52,8 @@ func _on_house_player_exited() -> void:
 	#do the animation
 	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.6,0.6), 1)
 	tween.tween_property($Player, "modulate:a", 1, 2)
+
+
+func _on_player_update_stats() -> void:
+	$UI.update_laser_text()
+	$UI.update_grenade_text()
