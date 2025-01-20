@@ -217,3 +217,12 @@ margin container node > theme override > constants > add margin (like css)
 project > project settings > autoload
 
 considere comme un node, du coup on peut avoir accès aux property
+
+===========
+node pour le ground > inspectror > ordering > z index > -2
+tilemap > inspectror > ordering > z index > -1
+
+===========
+
+decoration je dois add staticbody2d node >polygon collision shape node
+note: pas besoin de faire une scene juste pour ce genre d'element dans le jeu 10:17:00

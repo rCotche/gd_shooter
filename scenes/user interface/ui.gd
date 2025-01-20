@@ -14,6 +14,9 @@ var red: Color = Color(0.9,0,0,1)
 func _ready() -> void:
 	#connect le script Globals
 	Globals.connect("stat_change", update_stat_text)
+	
+	#run une premiere fois la fonction
+	update_stat_text()
 
 func update_laser_text():
 	laser_label.text = str(Globals.laser_amount)

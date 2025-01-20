@@ -4,28 +4,28 @@
 [ext_resource type="Texture2D" uid="uid://bihva3o7pgvw" path="res://graphics/objects/pillow_large.png" id="2_7w002"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j40ve"]
-size = Vector2(312, 179)
+size = Vector2(498, 287)
 
 [node name="Bed" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 11
 
-[node name="BedImage" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_2km77")
-
-[node name="PillowImage" type="Sprite2D" parent="."]
-position = Vector2(117, -42)
-rotation = -3.14159
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_7w002")
-
-[node name="PillowImage2" type="Sprite2D" parent="."]
-position = Vector2(118, 30)
-rotation = -3.14159
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_7w002")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_j40ve")
+
+[node name="BedImage" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_2km77")
+
+[node name="PillowImage" type="Sprite2D" parent="."]
+position = Vector2(203, -58)
+rotation = -3.14159
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_7w002")
+
+[node name="PillowImage2" type="Sprite2D" parent="."]
+position = Vector2(204, 57)
+rotation = -3.14159
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_7w002")
