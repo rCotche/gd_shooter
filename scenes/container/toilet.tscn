@@ -2,20 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://c6k0buxbxsfs6" path="res://scenes/container/item_container.tscn" id="1_yvl5a"]
 [ext_resource type="Texture2D" uid="uid://bwvy65imgafl2" path="res://graphics/objects/toilet.png" id="2_dumwj"]
+[ext_resource type="Script" path="res://scenes/container/toilet.gd" id="2_hqbi5"]
 [ext_resource type="Texture2D" uid="uid://dv5f70pvas7vy" path="res://graphics/objects/lid.png" id="3_3luyd"]
-
-[sub_resource type="GDScript" id="GDScript_eybva"]
-script/source = "extends ItemContainer
-
-func hit():
-	print(\"toilet\")
-"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk78v"]
 radius = 105.0
 
 [node name="Toilet" instance=ExtResource("1_yvl5a")]
-script = SubResource("GDScript_eybva")
+script = ExtResource("2_hqbi5")
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_dk78v")
@@ -26,3 +20,5 @@ texture = ExtResource("2_dumwj")
 [node name="LidSprite" parent="." index="2"]
 position = Vector2(0, 17)
 texture = ExtResource("3_3luyd")
+
+[node name="ItemPosition" type="Marker2D" parent="SpawnPositions" index="0"]

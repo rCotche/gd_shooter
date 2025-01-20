@@ -16,6 +16,7 @@ func _ready() -> void:
 func _on_container_opened(pos, direction):
 	var item = item_scene.instantiate()
 	item.position = pos
+	item.direction = direction
 	# Use call_deferred() or set_deferred() to change monitoring state instead.
 	#to solve this error we use the method call_deferred
 	$Items.call_deferred("add_child", item)
