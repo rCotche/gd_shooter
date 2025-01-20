@@ -226,3 +226,6 @@ tilemap > inspectror > ordering > z index > -1
 
 decoration je dois add staticbody2d node >polygon collision shape node
 note: pas besoin de faire une scene juste pour ce genre d'element dans le jeu 10:17:00
+
+===========
+node can be in multiple group

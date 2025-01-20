@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ovjdv4vwpotf"]
+[gd_scene load_steps=12 format=3 uid="uid://ovjdv4vwpotf"]
 
 [ext_resource type="Texture2D" uid="uid://dpjpdsye24imu" path="res://graphics/projectiles/grenade.png" id="1_5cnj8"]
 [ext_resource type="Script" path="res://scenes/projectiles/grenade.gd" id="1_xnsp0"]
@@ -11,6 +11,49 @@ bounce = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ur3aq"]
 radius = 23.0
+
+[sub_resource type="Animation" id="Animation_o1ed0"]
+resource_name = "Blinking"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 11.0, 0.0, 11.0, 0.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"explode"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explosion:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ncot4"]
 resource_name = "Explosion"
@@ -142,55 +185,15 @@ tracks/4/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_o1ed0"]
-resource_name = "Blinking"
-length = 2.0
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 11.0, 0.0, 11.0, 0.0]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(2),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"explode"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Explosion:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ogei"]
 _data = {
 "Blinking": SubResource("Animation_o1ed0"),
 "Explosion": SubResource("Animation_ncot4"),
 "RESET": SubResource("Animation_c2a5g")
 }
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hsbjq"]
+radius = 93.0054
 
 [node name="Grenade" type="RigidBody2D"]
 collision_layer = 8
@@ -224,3 +227,11 @@ color = Color(0.887801, 3.77826e-06, 1.05888e-06, 1)
 energy = 0.0
 texture = ExtResource("4_er7dk")
 texture_scale = 0.03
+
+[node name="GrenadeBlast" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrenadeBlast"]
+shape = SubResource("CircleShape2D_hsbjq")
+
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
+[connection signal="body_entered" from="GrenadeBlast" to="." method="_on_grenade_blast_body_entered"]
