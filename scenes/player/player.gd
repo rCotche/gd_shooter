@@ -21,6 +21,7 @@ func _process(_delta: float) -> void:
 	velocity = direction * speed
 	#specific method to move a CharacterBody2D
 	move_and_slide()
+	Globals.player_pos = global_position
 	
 	#rotate
 	#look_at : rotate vers un vector2
