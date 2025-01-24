@@ -4,11 +4,18 @@ var player_nearby: bool = false
 var can_laser: bool = true
 var first_gun_shoted: bool = false
 
-signal laser(pos, direction)
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var health: int = 30
+var damageable: bool = true
 
+signal laser(pos, direction)
+
+func hit():
+	if damageable:
+		health -= 10
+		damageable = false
+		$Timers/DamageCooldown.start()
+	if health <= 0:
+		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -29,7 +36,7 @@ func _process(_delta: float) -> void:
 			direction = (Globals.player_pos - position).normalized()
 			laser.emit(pos, direction)
 			can_laser = false
-			$LaserCooldown.start()
+			$Timers/LaserCooldown.start()
 
 
 func _on_attack_area_body_entered(_body: Node2D) -> void:
@@ -42,3 +49,7 @@ func _on_attack_area_body_exited(_body: Node2D) -> void:
 
 func _on_laser_cooldown_timeout() -> void:
 	can_laser = true
+
+
+func _on_damage_cooldown_timeout() -> void:
+	damageable = true

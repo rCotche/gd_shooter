@@ -171,7 +171,7 @@ blend_mode = 1
 position = Vector2(-207, 548)
 shape = SubResource("RectangleShape2D_4i6c8")
 
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="8"]
 position = Vector2(-282, 207)
 rotation = -1.71453
 

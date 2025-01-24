@@ -9,6 +9,9 @@ signal grenade(pos, direction)
 @export var max_speed: int = 500
 var speed: int = max_speed
 
+func hit():
+	print("player wah hit")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #pour dire que on utilise delta à godot on ajoute un underscore pour le prevenir
 func _process(_delta: float) -> void:
