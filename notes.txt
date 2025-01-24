@@ -229,3 +229,22 @@ note: pas besoin de faire une scene juste pour ce genre d'element dans le jeu 10
 
 ===========
 node can be in multiple group
+===========
+
+to give an element a shader > inspector > material > new shader material > click de nouveau su le material > new shader
+
+click sr editeur shader (en bas au niveau du terminal) > click sur le script shader
+
+void fragment determine la couleur et la transparence de chaque pixel
+
+void vertex determine update la position de tous les pixel
+
+
+void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+
+some kind of color attribute
+
+===========
+
+evite les if dans le langage shading
