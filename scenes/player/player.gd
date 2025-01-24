@@ -10,7 +10,7 @@ signal grenade(pos, direction)
 var speed: int = max_speed
 
 func hit():
-	print("player wah hit")
+	Globals.health -= 10
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #pour dire que on utilise delta à godot on ajoute un underscore pour le prevenir
